@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <link href="assets/style.css" rel="stylesheet" type="text/css"/>
+        <title>New year games</title>
+
+    </head>
+    <body>
+        <div id="select-team-block" class="container-fluid" style="display: block;">
+            <div class="row">
+                <div class="col-sm text-center padding-col">
+                    <a href="#" class="btn btn-team-orange btn-block" data-team="1">
+                        ทีม 1
+                    </a>
+                </div>
+                <div class="col-sm text-center padding-col">
+                    <a href="#" class="btn btn-team-orange btn-block" data-team="2">
+                        ทีม 2
+                    </a>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center padding-col">
+                    <a href="#" class="btn btn-team-orange btn-block" data-team="3">
+                        ทีม 3
+                    </a>
+                </div>
+                <div class="col-sm text-center padding-col">
+                    <a href="#" class="btn btn-team-orange btn-block" data-team="4">
+                        ทีม 4
+                    </a>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center">
+                    <a class="btn btn-secondary">
+                        ดูคะแนน
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-right">
+                    <a href="#">
+                        ลบคะแนน
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="select-game-block" class="container-fluid" style="display: none;">
+            <div class="row">
+                <div class="col-sm">
+                    <a href="#" class="back-home">
+                        <h3>
+                            Back to home
+                        </h3>
+                    </a>
+                </div>      
+                <div class="col-sm text-right">
+                    <h3>
+                        <span class="team-name">Team name</span>                        
+                    </h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center">
+                    <h1>
+                        เลือกเกม
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center padding-col">
+                    <a href="#" class="btn btn-game-blue" data-game="1">
+                        อีเมโลดี้
+                    </a>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center padding-col">
+                    <a href="#" class="btn btn-game-blue" data-game="2">
+                        ไปไหนดีครับ
+                    </a>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center padding-col">
+                    <a href="#" class="btn btn-game-blue" data-game="3">
+                        ใบัหัวต่อท้าย
+                    </a>
+                </div>                
+            </div>
+        </div>
+
+        <div id="start-game-block" class="container-fluid" style="display: none;">
+            <div class="row">
+                <div class="col-sm">
+
+                    <a href="#" class=" back-home">
+                        <h3>
+                            Back to home
+                        </h3>
+                    </a>
+
+                </div>
+
+                <div class="col-sm text-right">
+                    <h3>
+                        <span class="team-name">Team name</span>
+                        :
+                        <span>0</span>
+                    </h3>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center">
+                    <h1>
+                        <span class="game-name">game name</span>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center padding-col">
+                    <a id="click-start" href="#" class="btn btn-game-blue">
+                        เริ่มเกม
+                    </a>
+                </div>                
+            </div>
+        </div>
+
+        <div id="play-game-block" class="container-fluid" style="display: none;">
+            <div class="row">
+                <div class="col-sm">
+
+                    <a href="#" class=" back-home">
+                        <h3>
+                            Back to home
+                        </h3>
+                    </a>
+
+                </div>
+
+                <div class="col-sm text-right">
+                    <h3>
+                        <span class="team-name">Team name</span>
+                        :
+                        <span>0</span>
+                    </h3>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center">
+                    <h1>
+                        <span class="game-name">game name</span>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center padding-col" style="display:table;">
+                    <div id="game-word">
+                        ทำอะไรสักอย่าง<br>
+                        (ป้าง นครินทร์)
+                    </div>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="col-sm text-center padding-col">
+                    <a href="#" class="btn btn-danger btn-game-control">
+                        ข้าม
+                    </a>
+                </div>
+
+                <div class="col-sm text-center padding-col">
+                    <a href="#" class="btn btn-success btn-game-control">
+                        ตอบถูก
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+        <script src="assets/app.js" type="text/javascript"></script>
+    </body>
+</html>
