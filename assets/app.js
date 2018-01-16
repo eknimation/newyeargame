@@ -1,4 +1,4 @@
-var team, game;
+var team, game, currentTime, gameCountdown;
 
 var objTeam = {
     1: 'ทีม 1',
@@ -15,6 +15,8 @@ var objGame = {
 
 $(function () {
     $('.back-home').click(function () {
+        clearInterval(gameCountdown);
+
         $('#select-team-block').show();
         $('#select-game-block').hide();
         $('#start-game-block').hide();
@@ -40,11 +42,33 @@ $(function () {
     });
 
     $('#click-start').click(function () {
+        startTime();
+
         $('#start-game-block').hide();
         $('#play-game-block').show();
     });
 });
 
+function startTime() {
+    currentTime = 5;
+    $('#timeout').html(currentTime);
 
+    gameCountdown = setInterval(countDown, 1000);
+}
+
+function countDown() {
+    currentTime -= 1;
+    $('#timeout').html(currentTime);
+
+    if (currentTime <= 0) {
+        setTimeout(function () {
+            clearInterval(gameCountdown);
+            alert('หมดเวลา');
+        }, 200);
+
+    }
+
+
+}
 
 
