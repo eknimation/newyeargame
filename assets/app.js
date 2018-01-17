@@ -1,4 +1,4 @@
-var team, game, currentTime, gameCountdown;
+var team, game, currentTime, gameCountdown, emolodyData, wheregoData, guessData, gameData, wordIndex;
 
 var objTeam = {
     1: 'ทีม 1',
@@ -32,7 +32,7 @@ $(function () {
         $('#select-game-block').show();
     });
 
-    $('.btn-game-blue').click(function () {
+    $('.select-game').click(function () {
         game = $(this).data('game');
 
         $('.game-name').html(objGame[game]);
@@ -43,14 +43,19 @@ $(function () {
 
     $('#click-start').click(function () {
         startTime();
+        loadGame();
 
         $('#start-game-block').hide();
         $('#play-game-block').show();
     });
+
+    $('#word-skip').click(function () {
+        skipWord();
+    });
 });
 
 function startTime() {
-    currentTime = 5;
+    currentTime = 90;
     $('#timeout').html(currentTime);
 
     gameCountdown = setInterval(countDown, 1000);
@@ -67,7 +72,52 @@ function countDown() {
         }, 200);
 
     }
+}
 
+function loadGame() {
+    gameData;
+    if (game == 1) {
+        gameData = emelodyData;
+    } else if (game == 2) {
+        gameData = wheregoData;
+    } else if (game == 3) {
+        gameData = guessData;
+    }
+    wordIndex = 0;
+
+    displayWord();
+}
+
+function displayWord() {
+    var word = gameData[team][wordIndex];
+    $('#game-word').html(word);
+}
+
+function skipWord() {
+    var size = gameData[team].length;
+
+    if (size > 0) {
+        var maxIndex = size - 1;
+        var nextIndex = wordIndex + 1;
+
+        if (nextIndex <= maxIndex) {
+            wordIndex = nextIndex;
+        } else {
+            wordIndex = 0;
+        }
+
+        setTimeout(displayWord, 100);
+
+    } else {
+        alert('หมดแล้ว');
+    }
+}
+
+function correctWord() {
+
+}
+
+function nextWord() {
 
 }
 
