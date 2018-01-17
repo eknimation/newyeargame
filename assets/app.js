@@ -1,4 +1,12 @@
 var team, game, currentTime, gameCountdown, emolodyData, wheregoData, guessData, gameData, wordIndex;
+var emelodyScore = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0
+};
+
+var wheregoScore, guessScore;
 
 var objTeam = {
     1: 'ทีม 1',
@@ -16,6 +24,9 @@ var objGame = {
 $(function () {
     $('.back-home').click(function () {
         clearInterval(gameCountdown);
+
+        $('#word-skip, #word-correct').removeAttr('disabled');
+        $('#score').html(0);
 
         $('#select-team-block').show();
         $('#select-game-block').hide();
@@ -52,6 +63,10 @@ $(function () {
     $('#word-skip').click(function () {
         skipWord();
     });
+
+    $('#word-correct').click(function () {
+        correctWord();
+    });
 });
 
 function startTime() {
@@ -66,10 +81,11 @@ function countDown() {
     $('#timeout').html(currentTime);
 
     if (currentTime <= 0) {
+        $('#word-skip, #word-correct').attr('disabled', 'disabled');
         setTimeout(function () {
             clearInterval(gameCountdown);
             alert('หมดเวลา');
-        }, 200);
+        }, 100);
 
     }
 }
@@ -90,7 +106,18 @@ function loadGame() {
 
 function displayWord() {
     var word = gameData[team][wordIndex];
+    if (word == undefined) {
+        word = '';
+        clearInterval(gameCountdown);
+        $('#word-skip, #word-correct').attr('disabled', 'disabled');
+
+        setTimeout(function () {
+            alert('หมดแล้วจ้า');
+        }, 100);
+
+    }
     $('#game-word').html(word);
+
 }
 
 function skipWord() {
@@ -114,11 +141,25 @@ function skipWord() {
 }
 
 function correctWord() {
+    gameData[team].splice(wordIndex, 1);
+    addScore();
 
+    if (gameData[team][wordIndex] == undefined) {
+        wordIndex = 0;
+    }
+    setTimeout(displayWord, 100);
 }
 
-function nextWord() {
+function addScore() {
+    var displayScore;
+    if (game == 1) {
+        emelodyScore[team] = parseInt(emelodyScore[team]) + 1;
+        displayScore = emelodyScore[team];
+    } else if (game == 2) {
+        gameData = wheregoData;
+    } else if (game == 3) {
+        gameData = guessData;
+    }
 
+    $('#score').html(displayScore);
 }
-
-
