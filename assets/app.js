@@ -169,9 +169,11 @@ function addScore() {
         emelodyScore[team] = parseInt(emelodyScore[team]) + 1;
         displayScore = emelodyScore[team];
     } else if (game == 2) {
-        gameData = wheregoData;
+        wheregoScore[team] = parseInt(wheregoScore[team]) + 1;
+        displayScore = wheregoScore[team];
     } else if (game == 3) {
-        gameData = guessData;
+        guessScore[team] = parseInt(guessScore[team]) + 1;
+        displayScore = guessScore[team];
     }
 
     $('#score').html(displayScore);
