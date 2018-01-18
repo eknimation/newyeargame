@@ -39,7 +39,7 @@
                 </div>                
             </div>
 
-            <div class="row">
+<!--            <div class="row">
                 <div class="col-sm text-center">
                     <a class="btn btn-secondary">
                         ดูคะแนน
@@ -53,7 +53,7 @@
                         ลบคะแนน
                     </a>
                 </div>
-            </div>
+            </div>-->
         </div>
 
         <div id="select-game-block" class="container-fluid" style="display: none;">
@@ -82,7 +82,7 @@
 
             <div class="row">
                 <div class="col-sm text-center padding-col">
-                    <a href="#" class="btn btn-game-blue" data-game="1">
+                    <a href="#" class="btn btn-game-blue select-game" data-game="1">
                         อีเมโลดี้
                     </a>
                 </div>                
@@ -90,7 +90,7 @@
 
             <div class="row">
                 <div class="col-sm text-center padding-col">
-                    <a href="#" class="btn btn-game-blue" data-game="2">
+                    <a href="#" class="btn btn-game-blue select-game" data-game="2">
                         ไปไหนดีครับ
                     </a>
                 </div>                
@@ -98,7 +98,7 @@
 
             <div class="row">
                 <div class="col-sm text-center padding-col">
-                    <a href="#" class="btn btn-game-blue" data-game="3">
+                    <a href="#" class="btn btn-game-blue select-game" data-game="3">
                         ใบัหัวต่อท้าย
                     </a>
                 </div>                
@@ -160,7 +160,7 @@
                     <h3>
                         <span class="team-name">Team name</span>
                         :
-                        <span>0</span>
+                        <span id="score">0</span>
                     </h3>
 
                 </div>
@@ -171,6 +171,10 @@
                     <h1>
                         <span class="game-name">game name</span>
                     </h1>
+                    <h3>
+                        <span id="timeout">60</span>
+                    </h3>
+
                 </div>
             </div>
 
@@ -184,16 +188,16 @@
             </div>
 
             <div class="row">
-                <div class="col-sm text-center padding-col">
-                    <a href="#" class="btn btn-danger btn-game-control">
+                <div class="col-sm text-center padding-col">                    
+                    <button id="word-skip" class="btn btn-danger btn-game-control">
                         ข้าม
-                    </a>
+                    </button>
                 </div>
 
                 <div class="col-sm text-center padding-col">
-                    <a href="#" class="btn btn-success btn-game-control">
+                    <button id="word-correct" class="btn btn-success btn-game-control">
                         ตอบถูก
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -204,5 +208,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
         <script src="assets/app.js" type="text/javascript"></script>
+        <script src="assets/wherego.js" type="text/javascript"></script>
+        <script src="assets/guess.js" type="text/javascript"></script>
+        <script src="assets/emelody.js" type="text/javascript"></script>
     </body>
 </html>
