@@ -1,4 +1,5 @@
 var team, game, currentTime, gameCountdown, emolodyData, wheregoData, guessData, gameData, wordIndex;
+
 var emelodyScore = {
     1: 0,
     2: 0,
@@ -6,7 +7,19 @@ var emelodyScore = {
     4: 0
 };
 
-var wheregoScore, guessScore;
+var wheregoScore = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0
+};
+
+var guessScore = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0
+};
 
 var objTeam = {
     1: 'ทีม 1',
